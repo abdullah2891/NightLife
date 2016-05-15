@@ -1,0 +1,17 @@
+{
+  "name": "nightlife",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^4.4.17",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.0"
+  }
+}
