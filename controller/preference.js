@@ -21,3 +21,12 @@ exports.isGoing = function(req,res){
   });
 
 }
+exports.getAll = function(req,res){
+  User.find(function(err,preference){
+    if(!err){
+      res.json(preference);
+    }else{
+      res.json(err);
+    }
+  })
+}
