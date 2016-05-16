@@ -30,3 +30,26 @@ exports.getAll = function(req,res){
     }
   })
 }
+
+exports.getUser = function(req,res){
+  var user = req.session.passport.user;
+  User.find({id:user.id},function(err,user){
+    if(!err){
+      res.json(user);
+    }else{
+      res.json(err);
+    }
+  })
+}
+
+exports.deleteUser =  function(req,res){
+  var user = req.session.passport.user;
+
+  User.remove({id:user.id},function(err,user){
+    if(!err){
+      res.send("removed");
+    }else{
+      res.json(err);
+    }
+  })
+}
