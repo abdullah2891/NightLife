@@ -1,0 +1,72 @@
+<html>
+<head>
+  <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+</head>
+
+<body ng-app="app" ng-controller = 'appController'>
+
+<h1>{{title}}</h1>
+<p>{{status}}</p>
+<p>{{count}}</p>
+<button type="button" ng-click= "getUser()">test!</button>
+<button type="button" ng-click = "postUser()">POST</button>
+<button ng-repeat = "d in data" ng-click="clicked(d.test)">{{d.test}}</button>
+
+<form method="LINK" action={{link}}>
+<input value={{auth}} type="submit" ng-click = "authFunc()">
+</form>
+  <script>
+    var app = angular.module('app',[]);
+    var postUser = function(url,data){
+
+    }
+    app.controller('appController',['$scope','$http',function($scope,$http){
+      $scope.title = "NOT CLICKED";
+      $scope.auth = "login";
+      $scope.link = "/login/facebook/callback";
+      $scope.authFunc = function(){
+        $scope.auth = "logout";
+      }
+
+      $scope.data = [
+        {test:2},{test:4},{test:3},{test:0},{test:20}
+      ];
+      $scope.clicked = function(input){
+          $scope.count = input;
+      }
+
+      $scope.getUser = function(){
+        $scope.title = "GET";
+        $http.get('/api/search/london',function(result){
+          $scope.status = result;
+        });
+      }
+      $scope.postUser = function(query){
+          $scope.title = "POST";
+
+          $http({
+              method:"post",
+              url: "/api/preference",
+              headers : {'Content-Type': 'application/json'},
+              data : {
+                location:"City of Stark",
+                }
+          })
+              .success(function(result){
+              $scope.status = result;
+
+          })
+               .error(function(err){
+                   console.log(err);
+          });
+
+      }
+
+    }])
+
+  </script>
+</body>
+
+
+</html>
