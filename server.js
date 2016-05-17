@@ -4,12 +4,12 @@ var app = express();
 var bodyParser = require('body-parser');
 var expressSession = require('express-session');
 var passport = require('passport');
+var gitConfig = require('./config/git');
 
 
 //db URI
-//mongoose.connect('mongodb://localhost/planner');
-mongoose.connect('mongodb://heroku_769b6fs6:tt8l6763274jrimqiv56pjj6r8@ds023932.mlab.com:23932/heroku_769b6fs6');
-
+//mongoose.connect(gitConfig.local);
+mongoose.connect(gitConfig.heroku);
 //controller
 var UserController = require('./controller/user');
 var authController = require('./controller/auth');
