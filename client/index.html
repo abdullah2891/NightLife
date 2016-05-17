@@ -1,0 +1,95 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+    <script src = "app.js"></script>
+
+
+    <title>
+    Nightlife
+    </title>
+
+
+
+
+
+    <link rel = "stylesheet" href = "style.css">
+    <script src="mason.js"> </script>
+
+    </head>
+
+    <body ng-app = "app" ng-controller="appController">
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+
+
+              <form class="navbar-form">
+              <input type="text" ng-model="search">
+
+
+        <button class="btn btn-primary" ng-click="makeRequest()">SEARCH</button>
+        <h1>
+          <a href= "/login/facebook/callback">LOGIN</a>
+        </h1>
+
+
+              </form>
+
+          </div>
+
+
+        </nav>
+
+
+
+
+
+
+            <div class="row">
+            <div class="thumbnail" ng-repeat = "res in data">
+      <img style="border-radius:10%;" src={{res.snippet_image_url}} alt="Snippet image">
+      <div class="caption">
+            <div class = "row">
+                <div class = "col-md-6">
+                    <h3 class="desc"><strong>{{res.name}}</strong></h3>
+          <img src={{res.rating_img_url}}>
+                    </div>
+                <div class = "col-md-6">
+                <h1 style="font-size:6em;color:white;">{{res.rating}}</h1>
+                </div>
+
+                </div>
+
+          <div class="desc"><strong>{{res.snippet_text}}</strong></div>
+
+          <p class="desc">Phone: {{res.phone}}</p>
+          <button ng-click="postUser(res.name)">GOING?</button>
+      </div>
+                </div>
+  </div>
+
+
+
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+
+</html>

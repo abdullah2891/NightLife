@@ -14,6 +14,7 @@ exports.postUser = function(req,res){
 
     newUser.save(function(err,user){
       if(!err){
+        console.log(user);
         res.json(user);
       }else{
         res.send("ERROR");;

@@ -13,6 +13,7 @@ mongoose.connect('mongodb://localhost/planner');
 var UserController = require('./controller/user');
 var authController = require('./controller/auth');
 var preferenceController = require('./controller/preference');
+var searchController = require('./controller/search');
 
 //middleware
 app.use(bodyParser.urlencoded({
@@ -48,6 +49,10 @@ router.route('/get')
 .get(authController.islogged,preferenceController.getUser)
 .delete(authController.islogged,preferenceController.deleteUser);
 
+//search
+router.route('/search/:search')
+.get(searchController.yelp);
+
 //ERROR
 router.route('/error')
 .get(UserController.errorPage);
@@ -57,11 +62,12 @@ app.get('/login/facebook/callback',
 authController.isAuthenticated,
 function(req,res){
   console.log("LOGGED IN ");
-  res.redirect('/test');
+  res.redirect('/');
 })
 
 //SERVING STATIC PAGE
 app.use('/test',express.static(__dirname+'/testClient'));
+app.use('/',express.static(__dirname+'/client'));
 
 //server
 var PORT = process.env.PORT || 3000;

@@ -1,0 +1,37 @@
+body{
+    background: url(https://static.pexels.com/photos/370/lights-night-dark-abstract.jpeg) no-repeat fixed  center;
+      -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size :cover;
+    background-color : rgb(211, 38, 38);
+    
+}
+.thumbnail{
+    display: inline-block;
+    border-radius:4%;  
+    width:20em;
+    border-style:solid;
+    border-color: black;
+    border-width:2px;
+    background-color : rgba(10, 8, 56, 0.4);
+    margin-top:5%;
+    margin-left:5%;
+}
+
+.thumbnail:hover{
+    background: linear-gradient(to left, rgba(20,17,86,0.6), rgba(20,17,86,0));
+}
+.desc{
+    color:yellow;
+    font-size:1.5em;
+}
+
+.navbar{
+    background-color:rgba(255,255,255,0.05);
+}
+
+.container-fluid{
+    margin-top:50px;
+    margin-left:5%;
+}
