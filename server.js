@@ -65,6 +65,12 @@ function(req,res){
   res.redirect('/');
 })
 
+app.get('/logout',function(req,res){
+
+  req.logout();
+  res.redirect('/');
+})
+
 //SERVING STATIC PAGE
 app.use('/test',express.static(__dirname+'/testClient'));
 app.use('/',express.static(__dirname+'/client'));
