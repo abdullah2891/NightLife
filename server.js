@@ -43,7 +43,7 @@ router.route('/post')
 //POST PREFERENCE
 router.route('/preference')
 .post(preferenceController.isGoing)
-.get(preferenceController.getAll);
+.get(authController.islogged, preferenceController.getAll);
 
 router.route('/get')
 .get(authController.islogged,preferenceController.getUser)

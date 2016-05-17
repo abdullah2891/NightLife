@@ -37,6 +37,11 @@ app.controller('appController',['$scope','$http',function($scope,$http){
         });
 
     }
+    $scope.getPreference = function(){
+      $http.get("/api/get").then(function(response){
+        $scope.going = response;
+      })
+    }
 
 
 }]);
