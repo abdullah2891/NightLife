@@ -16,7 +16,7 @@ passport.deserializeUser(function(user,done){
 passport.use(new FacebookStrategy({
   clientID:fbConfig.appID,
   clientSecret:fbConfig.appSecret,
-  callbackURL: "http://localhost:3000/login/facebook/callback"
+  callbackURL: "https://night-planner.herokuapp.com/login/facebook/callback"
 },
 function(accessToken,refreshToken,profile,done){
   console.log(profile);
