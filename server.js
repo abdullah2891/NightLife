@@ -5,9 +5,10 @@ var bodyParser = require('body-parser');
 var expressSession = require('express-session');
 var passport = require('passport');
 
-//db URI
-mongoose.connect('mongodb://localhost/planner');
 
+//db URI
+//mongoose.connect('mongodb://localhost/planner');
+mongoose.connect('mongodb://heroku_769b6fs6:tt8l6763274jrimqiv56pjj6r8@ds023932.mlab.com:23932/heroku_769b6fs6');
 
 //controller
 var UserController = require('./controller/user');
