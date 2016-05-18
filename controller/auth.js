@@ -1,7 +1,7 @@
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
-var fbConfig = require('./fb');
-
+//var fbConfig = require('./fb');
+var fbConfig = require('./test');
 
 passport.serializeUser(function(user,done){
   console.log("Serializing User");
@@ -16,7 +16,7 @@ passport.deserializeUser(function(user,done){
 passport.use(new FacebookStrategy({
   clientID:fbConfig.appID,
   clientSecret:fbConfig.appSecret,
-  callbackURL: "https://night-planner.herokuapp.com/login/facebook/callback"
+  callbackURL: fbConfig.URL
 },
 function(accessToken,refreshToken,profile,done){
   console.log(profile);

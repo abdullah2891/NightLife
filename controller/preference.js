@@ -10,6 +10,8 @@ exports.isGoing = function(req,res){
   newUser.name = user.displayName;
   newUser.id = user.id;
   newUser.location = req.body.location;
+  newUser.image = req.body.image;
+  newUser.text = req.body.text;
 
   newUser.save(function(err,user){
     if(err){
