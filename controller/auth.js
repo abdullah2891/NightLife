@@ -1,7 +1,7 @@
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
-//var fbConfig = require('./fb');
-var fbConfig = require('./test');
+var fbConfig = require('./fb');
+//var fbConfig = require('./test');
 
 passport.serializeUser(function(user,done){
   console.log("Serializing User");
