@@ -17,7 +17,7 @@ app.controller('appController',['$scope','$http',function($scope,$http){
         $scope.data = response.data.businesses;
     });
     }
-    $scope.postUser = function(query){
+    $scope.postUser = function(res){
         $scope.title = "POST";
 
         $http({
@@ -25,7 +25,9 @@ app.controller('appController',['$scope','$http',function($scope,$http){
             url: "/api/preference",
             headers : {'Content-Type': 'application/json'},
             data : {
-              location:query,
+              location:res.name,
+              image:res.snippet_image_url,
+              text : res.snippet_text
               }
         })
             .success(function(result){

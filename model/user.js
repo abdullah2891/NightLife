@@ -6,6 +6,7 @@ module.exports = mongoose.model("user",{
   location: {
     type:String,
     unique:true
-  }
-
+  },
+  image:String,
+  text :String
 });

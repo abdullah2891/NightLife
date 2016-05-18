@@ -67,12 +67,29 @@
                 <h4 class="modal-title">{{going.data[0].name}}</h4>
               </div>
               <div class="modal-body">
-                <p ng-repeat="place in going.data">{{place.location}}</p>
-              </div>
+
+                <div class="media" ng-repeat = "panel in going.data">
+                  <div class="media-left media-middle">
+                    <a href="#">
+                      <img class="media-object" src="{{panel.image}}" alt="...">
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">{{panel.location}}</h4>
+                    <p>
+                      {{panel.text}}
+                    </p>
+                    <button class = "btn btn-primary">DELETE</button>
+
+                  </div>
+                </div>
+
+
+                </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
-            </div>
+
 
           </div>
         </div>
@@ -80,28 +97,6 @@
 
 
 
-            <div class="row">
-            <div class="thumbnail" ng-repeat = "res in data">
-      <img style="border-radius:10%;" src={{res.snippet_image_url}} alt="Snippet image">
-      <div class="caption">
-            <div class = "row">
-                <div class = "col-md-6">
-                    <h3 class="desc"><strong>{{res.name}}</strong></h3>
-          <img src={{res.rating_img_url}}>
-                    </div>
-                <div class = "col-md-6">
-                <h1 style="font-size:6em;color:white;">{{res.rating}}</h1>
-                </div>
-
-                </div>
-
-          <div class="desc"><strong>{{res.snippet_text}}</strong></div>
-
-          <p class="desc">Phone: {{res.phone}}</p>
-          <button ng-click="postUser(res.name)">GOING?</button>
-      </div>
-                </div>
-  </div>
 
 
 
