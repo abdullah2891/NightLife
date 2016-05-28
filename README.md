@@ -1,5 +1,5 @@
 # NightLife
-Objective: Build a full stack JavaScript app that is functionally similar to this: http://whatsgoinontonight.herokuapp.com/ and deploy it to Heroku.
+Objective: Full Stack Application,https://night-planner.herokuapp.com/,statisfies below user stories
 
 #User Stories
 User Story: As an unauthenticated user, I can view all bars in my area.
